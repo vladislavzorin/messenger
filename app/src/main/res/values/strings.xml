@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Messenger</string>
+    <string name="welcome">Чат</string>
+    <string name="auth">Авторизация</string>
+    <string name="info">Курсовая работа Зорина Владислава А-08м-19</string>
+    <string name="registration">Регистрация</string>
+    <string name="email">E-mail</string>
+    <string name="userName">Логин</string>
+    <string name="password1">Пароль</string>
+    <string name="password2">Введите пароль повторно</string>
+</resources>

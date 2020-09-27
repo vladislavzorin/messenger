@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1053948110002",
+    "firebase_url": "https://messanger-6c9b3.firebaseio.com",
+    "project_id": "messanger-6c9b3",
+    "storage_bucket": "messanger-6c9b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053948110002:android:f46cbac77c8449e14495ab",
+        "android_client_info": {
+          "package_name": "ru.zorin.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053948110002-r80cqatevva96irf145h62s345mq7lbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN0oMrE7J1F2wY0aQeoVc_8eTa7GPxFXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053948110002-r80cqatevva96irf145h62s345mq7lbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

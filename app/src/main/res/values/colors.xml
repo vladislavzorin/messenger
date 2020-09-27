@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="cyan_800">#00838F</color>
+    <color name="cyan_800_overlay">#E600838F</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_300">#90A4AE</color>
+    <color name="green_300">#81C784</color>
+    <color name="overlay_dark_30">#4D000000</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="overlay_dark_10">#1A000000</color>
+    <color name="overlay_dark_20">#33000000</color>
+
+
+    <color name="avatar1">#9c27b0</color>
+    <color name="avatar2">#673ab7</color>
+    <color name="avatar3">#03a9f4</color>
+    <color name="avatar4">#ff5722</color>
+    <color name="avatar5">#259b24</color>
+    <color name="avatar6">#ff9800</color>
+
+</resources>
