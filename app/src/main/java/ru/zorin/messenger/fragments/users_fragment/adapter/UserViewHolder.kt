@@ -1,27 +1,37 @@
-package ru.zorin.messenger.fragments.chat_fragment.adapter
+package ru.zorin.messenger.fragments.users_fragment.adapter
 
-import android.annotation.SuppressLint
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.zorin.messenger.R
-import ru.zorin.messenger.model.Message
+import ru.zorin.messenger.fragments.users_fragment.UserListener
+import ru.zorin.messenger.model.User
 
-class YouMessageViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-    private val text = view.findViewById(R.id.text_content) as TextView
-    private val time = view.findViewById(R.id.time_content) as TextView
+class UserViewHolder(var view: View, var listener: UserListener) : RecyclerView.ViewHolder(view) {
+
+    private val userName = view.findViewById(R.id.name) as TextView
     private val avatarText = view.findViewById(R.id.avatar_text) as TextView
     private val avatarCircle = view.findViewById(R.id.avatar_circle) as ImageView
+    private val rootMessage = view.findViewById(R.id.root_message) as CardView
+    private val message = view.findViewById(R.id.message) as TextView
 
-    @SuppressLint("ResourceAsColor")
-    fun bind(message: Message, position: Int){
-        text.text = "${message.messege}"
-        time.text = "${message.time.substring(5..10)}"
-        avatarText.text = "${message.username[0].toUpperCase()}"
 
-        when (message.username[0].toUpperCase().toString()){
+    fun bind(user: User){
+        userName.text = user.login
+
+        if (user.lastMessage.messege.isEmpty()){
+            rootMessage.visibility = View.GONE
+        }else{
+            rootMessage.visibility = View.VISIBLE
+            message.text = user.lastMessage.messege
+        }
+
+        avatarText.text = "${user.login[0].toUpperCase()}"
+        when (user.login[0].toUpperCase().toString()){
             in "A".."E" -> avatarCircle.setColorFilter(ContextCompat.getColor( avatarCircle.context,R.color.avatar1));
             in "F".."K" -> avatarCircle.setColorFilter(ContextCompat.getColor( avatarCircle.context,R.color.avatar2));
             in "L".."N" -> avatarCircle.setColorFilter(ContextCompat.getColor( avatarCircle.context,R.color.avatar3));
@@ -31,6 +41,8 @@ class YouMessageViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
             else -> avatarCircle.setColorFilter(ContextCompat.getColor( avatarCircle.context,R.color.colorPrimary));
         }
 
+        view.setOnClickListener {
+            listener.onClickUser(user.login,user.userId)
+        }
     }
-
 }

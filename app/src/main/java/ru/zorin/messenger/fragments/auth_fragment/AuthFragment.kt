@@ -91,7 +91,7 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
         progress_bar.visibility = View.GONE
         fab.alpha = 1f
 
-        (activity as MainActivity).showChatFragment()
+        (activity as MainActivity).showUsersFragment()
     }
 
     override fun onLoginError() {

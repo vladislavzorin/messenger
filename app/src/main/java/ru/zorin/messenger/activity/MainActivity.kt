@@ -12,6 +12,7 @@ import ru.zorin.messenger.R
 import ru.zorin.messenger.fragments.auth_fragment.AuthFragment
 import ru.zorin.messenger.fragments.chat_fragment.ChatFragment
 import ru.zorin.messenger.fragments.registration_fragment.RegFragment
+import ru.zorin.messenger.fragments.users_fragment.UsersFragment
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var chatFragment:ChatFragment
 
+    @Inject
+    lateinit var usersFragment: UsersFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         App.appComponent.inject(this)
         super.onCreate(savedInstanceState)
@@ -54,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         }else{
             fm.beginTransaction()
                 .apply {
-                    add(R.id.fragmentLayout, chatFragment)
+                    add(R.id.fragmentLayout, usersFragment)
                     addToBackStack(null)
                 }
                 .commit()
@@ -80,14 +84,27 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun showChatFragment(){
+    fun showUsersFragment(){
+        fm.beginTransaction()
+            .apply {
+                replace(R.id.fragmentLayout, usersFragment)
+                addToBackStack(null)
+            }
+            .commit()
+        isChatFragmentShow = true
+    }
+
+
+    fun showChatFragment(dialogId:Int,friendLogin:String){
+        chatFragment.dialogId = dialogId
+        chatFragment.friendLogin = friendLogin
         fm.beginTransaction()
             .apply {
                 replace(R.id.fragmentLayout, chatFragment)
                 addToBackStack(null)
             }
             .commit()
-        isChatFragmentShow = true
+        isChatFragmentShow = false
     }
 
     override fun onBackPressed() {

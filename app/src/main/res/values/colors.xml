@@ -25,4 +25,7 @@
     <color name="avatar5">#259b24</color>
     <color name="avatar6">#ff9800</color>
 
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_300">#E0E0E0</color>
+
 </resources>

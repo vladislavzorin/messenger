@@ -5,6 +5,7 @@ import dagger.Provides
 import ru.zorin.messenger.fragments.auth_fragment.AuthFragment
 import ru.zorin.messenger.fragments.chat_fragment.ChatFragment
 import ru.zorin.messenger.fragments.registration_fragment.RegFragment
+import ru.zorin.messenger.fragments.users_fragment.UsersFragment
 import javax.inject.Singleton
 
 @Module
@@ -17,7 +18,6 @@ class FragmentModule {
     }
 
     @Provides
-    @Singleton
     fun provideChatFragment(): ChatFragment {
         return ChatFragment()
     }
@@ -26,5 +26,11 @@ class FragmentModule {
     @Singleton
     fun provideRegFragment(): RegFragment {
         return RegFragment()
+    }
+
+    @Provides
+    @Singleton
+    fun provideUsersFragment(): UsersFragment {
+        return UsersFragment()
     }
 }

@@ -1,17 +1,18 @@
-package ru.zorin.messenger.fragments.chat_fragment
+package ru.zorin.messenger.fragments.users_fragment
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 import moxy.viewstate.strategy.alias.OneExecution
 import ru.zorin.messenger.model.Message
+import ru.zorin.messenger.model.User
 
-interface ChatView : MvpView {
+interface UsersView : MvpView {
+
+    @AddToEndSingle
+    fun showUsers(list:List<User>)
 
     @OneExecution
-    fun showChat(list:List<Message>)
-
-    @OneExecution
-    fun scrollToLastPosition()
+    fun openChat(dialogId:Int,friendLogin:String)
 
     @OneExecution
     fun showProgressBar()
@@ -20,6 +21,6 @@ interface ChatView : MvpView {
     fun closeProgressBar()
 
     @AddToEndSingle
-    fun setSubTitle(str:String)
+    fun setSubTitle(title:String)
 
 }

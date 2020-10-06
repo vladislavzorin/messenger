@@ -7,22 +7,22 @@ import ru.zorin.messenger.repositories.ChatRepository
 
 @InjectViewState
 class ChatPresenter(var repository: ChatRepository): MvpPresenter<ChatView>(),ChatListener {
+    var dialogId:Int = 0
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         repository.listener = this
         repository.getChatId()
-
-        viewState.setSubTitle("Вы вошли как ${repository.getLogin()}")
     }
 
-    fun getMessage(){
+    fun getMessage(dialogId:Int){
+        this.dialogId = dialogId
         viewState.showProgressBar()
-        repository.loadChat()
+        repository.loadChat(dialogId)
     }
 
     fun sendMessage(message:String){
-        repository.sendMessage(message)
+        repository.sendMessage(message,dialogId)
         viewState.scrollToLastPosition()
     }
 

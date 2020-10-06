@@ -12,7 +12,7 @@ class MeMessageViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(message: Message, position: Int){
         text.text = "${message.messege}"
-        time.text = "${message.time}"
+        time.text = "${message.time.substring(5..10)}"
     }
 
 }

@@ -96,15 +96,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/autor_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="NAME"
-                            android:textSize="9sp"
-                            android:textAppearance="@style/TextAppearance.AppCompat"
-                            android:textColor="@color/grey_40"
-                            android:textStyle="normal" />
+
 
                         <View
                             android:layout_width="4dp"
